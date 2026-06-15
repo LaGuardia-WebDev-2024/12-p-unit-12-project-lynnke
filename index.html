@@ -20,18 +20,28 @@ Select ONE Additional Feature to Add
     <title>Unit 12 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
+ 
+  
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz About Lynn</h1>
+
+<!--images-->
+<img id="movie-pic" src="https://i.redd.it/9m5n4p53bmhb1.jpg" width="120">
+<img id="book-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXPhi5UuyXA844JgMnrNhBjgZ6d72uaUkXLA&s" width="225">
+<img id="lynn-pic" src="https://t3.ftcdn.net/jpg/03/35/13/14/360_F_335131435_DrHIQjlOKlu3GCXtpFkIG1v0cGgM9vJC.jpg" width="225">
+
+<hr />
     <hr />
+
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
         🎥 What is my favorite movie?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">Carol</option>
+          <option value="movie2">Pitch Perfect</option>
+          <option value="movie3">Scott Pillgram vs The World</option>
+          <option value="movie4">The Notebook</option>
         </select>
       </label>
       <button type="submit">Check Movie Answer</button>
@@ -45,10 +55,10 @@ Select ONE Additional Feature to Add
       <label>
         📖 What is my favorite book?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Seven Husbands of Evenlyn Hugo</option>
+          <option value="book2">None!o</option>
+          <option value="book3">Melt With You</option>
+          <option value="book4">Brooklyn</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
@@ -63,31 +73,53 @@ Select ONE Additional Feature to Add
       $("#movie-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
-        var answer = $answer.val();
+  var $answer = $("#movie-answer");
+  var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
-        } 
-        else {
-          $("#movie-text").text("Try Again!");
-        }
-      });
+  if (answer === "movie1") {
+    $("#movie-text")
+      .hide()
+      .text("YESSSS!")
+      .fadeIn(1000); // standard animation
+
+    $("#movie-pic").animate({
+      width: "200px"
+    }, 1000); // custom animation
+  }
+
+  else {
+    $("#movie-text")
+      .hide()
+      .text("Try Again!")
+      .fadeIn(1000);
+  }
+});
 
       //=======================Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
-        event.preventDefault();
+     $("#book-form").on("submit", function (event) {
+  event.preventDefault();
 
-        var $answer = $("#book-answer");
-        var answer = $answer.val();
+  var $answer = $("#book-answer");
+  var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-text").text("YESSSS!");
-        } 
-        else {
-          $("#book-text").text("Try Again!");
-        }
-      });
+  if (answer === "book1") {
+    $("#book-text")
+      .hide()
+      .text("YESSSS!")
+      .fadeIn(1000); // standard animation
+
+    $("#book-pic").animate ({
+      width: "200px"
+    }, 1000); // custom animation
+  }
+
+  else {
+    $("#book-text")
+      .hide()
+      .text("Try Again!")
+      .fadeIn(1000);
+  }
+});
       
     </script>
   </body>

@@ -20,3 +20,12 @@ hr {
   height: 5px;
   background-color: black;
 }
+
+button:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+
+img {
+  margin: 10px;
+}
